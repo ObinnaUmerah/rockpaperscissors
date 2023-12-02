@@ -26,11 +26,16 @@ function getComputerChoice(){
     return result
  }
 
- function playRound(playerChoice, getComputerChoice){
+ function playRound(playerChoice){
     //Create local variables to hold parameters as lowercase letters
     let player = playerChoice.toLowerCase()
-    let computer = getComputerChoice.toLowerCase()
+    let computer = getComputerChoice().toLowerCase()
     //Create a variable to display the message
+    //Create a scenario for a tie between the player and the computer
+    //IF Player and Computer are the same
+    if(player === computer){
+       return playRound(player)
+    }
     //IF Rock and Paper
     if(player === "rock" && computer === "paper"){
         //Return defeat
@@ -61,5 +66,5 @@ function getComputerChoice(){
  }
 }
 
-console.log(getComputerChoice());
-// console.log("Hello World")
+// console.log(getComputerChoice());
+console.log(playRound("Paper"));

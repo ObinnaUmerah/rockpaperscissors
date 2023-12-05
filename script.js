@@ -86,7 +86,7 @@ for(let i = 0; i < 5; i++){
         //Add one to computer's score
         computer++
         //Print out the current round along with the winner
-        console.log("The computer won round" + parseInt(i + 1));
+        console.log("The computer won round " + parseInt(i + 1));
     }
 }
     //IF Player is greater than computer
@@ -101,4 +101,4 @@ for(let i = 0; i < 5; i++){
 
 
 // console.log(getComputerChoice());
-console.log(playRound("Paper"));
+// r

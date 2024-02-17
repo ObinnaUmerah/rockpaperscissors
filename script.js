@@ -26,17 +26,17 @@ function getComputerChoice(){
     //IF the random number is 0 THEN
     if(random == 0){
         //Set the string variable to "Rock"
-        result = "Rock"
+        result = "rock"
     }
     //ELSE IF the random number is 1 THEN
     else if(random == 1){
         //Set the string variable to "Paper"
-        result = "Paper"
+        result = "paper"
     }
     //ELSE IF the random number is 2 THEN
     else if(random == 2){
         //Set the string variable to "Scissors"
-        result = "Scissors"
+        result = "scissors"
     //END IF
     //Return the the string variable
     }
@@ -45,7 +45,7 @@ function getComputerChoice(){
 
  function playRound(playerChoice){
     //Create local variables to hold parameters as lowercase letters
-    let player = playerChoice.toLowerCase()
+    // let player = playerChoice.toLowerCase()
     let computer = getComputerChoice().toLowerCase()
     //Create a variable to display the message
     //Create a scenario for a tie between the player and the computer

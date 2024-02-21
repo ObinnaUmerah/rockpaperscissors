@@ -13,6 +13,11 @@ scissors.addEventListener('click', () => {
     playRound("scissors")
 });
 
+const result = document.querySelector('#result');
+
+// const results = document.querySelector('.results');
+// results.addEventListener('click', () 
+
 
 
 function getComputerChoice(){
@@ -43,33 +48,34 @@ function getComputerChoice(){
     return result
  }
 
- function playRound(playerChoice){
+ function playRound(choice){
     //Create local variables to hold parameters as lowercase letters
-    // let player = playerChoice.toLowerCase()
-    let computer = getComputerChoice().toLowerCase()
+    // let player = choice.toLowerCase()
+    let computer = getComputerChoice()
     //Create a variable to display the message
     //Create a scenario for a tie between the player and the computer
     //IF Player and Computer are the same
 
-    if(player === computer){
-       return playRound(player)
+    if(choice === computer){
+        //Was previously player before, it's now choice
+       playRound(choice)
     }
     //IF Rock and Paper
-    if(player === "rock" && computer === "paper"){
+    if(choice === "rock" && computer === "paper"){
         //Return defeat
         return false}
     //ELIF Rock and Scissors
-    else if(player === "rock" && computer === "scissors"){
+    else if(choice === "rock" && computer === "scissors"){
         //Return victory
         return true
     }
     //ELIF Paper and Scissors
-    else if(player === "paper" && computer === "scissors"){
+    else if(choice === "paper" && computer === "scissors"){
         //Return defeat
         return false
     }
     //ELIF Paper and Rock
-    else if(player === "paper" && computer === "rock"){
+    else if(choice === "paper" && computer === "rock"){
         //Return victory
         return true}
     //ELIF Scissors and Rock
@@ -93,38 +99,40 @@ let computer
 //FOR the number being smaller than five
 // for(let i = 0; i < 5; i++){
     //IF playRound is TRUE
-    if(playRound() === true){  
-        //Add one to player's score
+//     if(playRound() === true){  
+//         //Add one to player's score
         
-        //(Commented out this part of the code)
-        // player++
-        //Print out the current round along with the winner
+//         //(Commented out this part of the code)
+//         // player++
+//         //Print out the current round along with the winner
 
-        //Commented this part of the code as well
-        // console.log("You won round " + parseInt(i + 1));
-        console.log("Congratulations, you have won the game");
-}
-//ELSE
-    else{
-        //Add one to computer's score
+//         //Commented this part of the code as well
+//         // console.log("You won round " + parseInt(i + 1));
 
-
-        //(Commented out this code)
-        // computer++
-        //Print out the current round along with the winner
-        // Commented out this part of the code
-        // console.log("The computer won round " + parseInt(i + 1));
-        console.log("The computer has won the game. Better luck next time.");
-    }
+//         //Make this into a DOM Method for displaying the result.
+//         console.log("Congratulations, you have won the game");
 // }
-    // //IF Player is greater than computer
-    // if(player > computer){
-    //     //Print that the player is the winner
-    //     console.log("Congratulations, you have won the game!");
-    // }
-    // //ELSE
-    //     //Print that the computer is the winner
-    //     console.log("The computer has won the game. Better luck next time.");
+// //ELSE
+//     else{
+//         //Add one to computer's score
+
+
+//         //(Commented out this code)
+//         // computer++
+//         //Print out the current round along with the winner
+//         // Commented out this part of the code
+//         // console.log("The computer won round " + parseInt(i + 1));
+//         console.log("The computer has won the game. Better luck next time.");
+//     }
+// // }
+//     // //IF Player is greater than computer
+//     // if(player > computer){
+//     //     //Print that the player is the winner
+//     //     console.log("Congratulations, you have won the game!");
+//     // }
+//     // //ELSE
+//     //     //Print that the computer is the winner
+//     //     console.log("The computer has won the game. Better luck next time.");
 
 
 

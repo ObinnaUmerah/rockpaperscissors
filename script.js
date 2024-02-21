@@ -13,7 +13,10 @@ scissors.addEventListener('click', () => {
     playRound("scissors")
 });
 
-const result = document.querySelector('#result');
+const result = document.querySelector('#results');
+
+let playerScore = 0;
+let compScore = 0;
 
 // const results = document.querySelector('.results');
 // results.addEventListener('click', () 
@@ -50,45 +53,38 @@ function getComputerChoice(){
 
  function playRound(choice){
     //Create local variables to hold parameters as lowercase letters
-    // let player = choice.toLowerCase()
     let computer = getComputerChoice()
-    //Create a variable to display the message
-    //Create a scenario for a tie between the player and the computer
+    
     //IF Player and Computer are the same
 
     if(choice === computer){
         //Was previously player before, it's now choice
-       playRound(choice)
+        result.textContent = "It's a tie! Player: " + playerScore + " Computer: " + compScore;
     }
-    //IF Rock and Paper
-    if(choice === "rock" && computer === "paper"){
-        //Return defeat
-        return false}
-    //ELIF Rock and Scissors
-    else if(choice === "rock" && computer === "scissors"){
-        //Return victory
-        return true
+
+    else if ((choice === "rock" && computer === "scissors") ||
+               (choice === "paper" && computer === "rock") ||
+               (choice === "scissors" && computer === "paper")) {
+        playerScore++;
+        result.textContent = "You win! Player: " + playerScore + " Computer: " + compScore;
+    } else {
+        compScore++;
+        result.textContent = "Computer wins! Player: "  + playerScore + " Computer: " + compScore
     }
-    //ELIF Paper and Scissors
-    else if(choice === "paper" && computer === "scissors"){
-        //Return defeat
-        return false
-    }
-    //ELIF Paper and Rock
-    else if(choice === "paper" && computer === "rock"){
-        //Return victory
-        return true}
-    //ELIF Scissors and Rock
-    else if(player === "scissors" && computer === "rock"){
-        //Return defeat
-        return false
-    }
-    //ELIF Scissors and Paper
-    else if(player === "scissors" && computer === "paper"){
-        //Return victory
-        return true 
- }
+
+    // Check if either player or computer has reached 5 points
+    if (playerScore === 5 || compScore === 5) {
+        // Declare the winner
+        if (playerScore === 5) {
+            result.textContent = "\nPlayer wins the game! Player: "  + playerScore + " Computer: " + compScore;
+        } else {
+            result.textContent = "\nComputer wins the game! Player: "  + playerScore + " Computer: " + compScore;
+        }
+
+   
 }
+ }
+
 
 //Create and initialize variable to hold user's input
 // let input = prompt("Hello. Please choose between rock, paper, and scissors")
@@ -96,43 +92,7 @@ function getComputerChoice(){
 let player
 //Create variable to store computer's score
 let computer
-//FOR the number being smaller than five
-// for(let i = 0; i < 5; i++){
-    //IF playRound is TRUE
-//     if(playRound() === true){  
-//         //Add one to player's score
-        
-//         //(Commented out this part of the code)
-//         // player++
-//         //Print out the current round along with the winner
 
-//         //Commented this part of the code as well
-//         // console.log("You won round " + parseInt(i + 1));
-
-//         //Make this into a DOM Method for displaying the result.
-//         console.log("Congratulations, you have won the game");
-// }
-// //ELSE
-//     else{
-//         //Add one to computer's score
-
-
-//         //(Commented out this code)
-//         // computer++
-//         //Print out the current round along with the winner
-//         // Commented out this part of the code
-//         // console.log("The computer won round " + parseInt(i + 1));
-//         console.log("The computer has won the game. Better luck next time.");
-//     }
-// // }
-//     // //IF Player is greater than computer
-//     // if(player > computer){
-//     //     //Print that the player is the winner
-//     //     console.log("Congratulations, you have won the game!");
-//     // }
-//     // //ELSE
-//     //     //Print that the computer is the winner
-//     //     console.log("The computer has won the game. Better luck next time.");
 
 
 
